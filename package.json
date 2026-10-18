@@ -8,9 +8,10 @@
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
-    "seed": "tsx --env-file=.env.local scripts/seed.ts",
-    "lien": "tsx --env-file=.env.local scripts/lien-connexion.ts",
-    "mail": "tsx --env-file=.env.local scripts/simuler-mail.ts"
+    "seed": "npx -y node@22 --env-file=.env.local node_modules/tsx/dist/cli.mjs scripts/seed.ts",
+    "lien": "npx -y node@22 --env-file=.env.local node_modules/tsx/dist/cli.mjs scripts/lien-connexion.ts",
+    "mail": "npx -y node@22 --env-file=.env.local node_modules/tsx/dist/cli.mjs scripts/simuler-mail.ts",
+    "admin": "npx -y node@22 --env-file=.env.local node_modules/tsx/dist/cli.mjs scripts/creer-admin.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",

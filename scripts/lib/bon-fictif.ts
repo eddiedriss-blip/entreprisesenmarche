@@ -12,6 +12,10 @@ export type DonneesBon = {
 
 export async function genererBonFictif(d: DonneesBon): Promise<Uint8Array> {
   const doc = await PDFDocument.create();
+  // Dates figées : un même bon donne toujours le même fichier (comme un vrai bon renvoyé).
+  const date = new Date("2026-01-01T00:00:00Z");
+  doc.setCreationDate(date);
+  doc.setModificationDate(date);
   const page = doc.addPage([595, 842]);
   const police = await doc.embedFont(StandardFonts.Helvetica);
   const gras = await doc.embedFont(StandardFonts.HelveticaBold);
